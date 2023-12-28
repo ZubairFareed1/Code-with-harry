@@ -11,6 +11,10 @@ export default function TextForm(props) {
         let newText = text.toLowerCase();
         setText(newText);
     }
+    const handleReverseClick = () =>{
+        let newText = text.split("").reverse().join("");
+        setText(newText)
+    }
     const handleOnChange = (event) =>{
         // console.log("handle on changed");
         setText(event.target.value);
@@ -26,7 +30,8 @@ export default function TextForm(props) {
    <textarea className="form-control" placeholder='Enter paragraph to convert...' value={text}  onChange={handleOnChange} id="exampleFormControlTextarea1" rows="8"></textarea>
 </div>
 <button className='btn btn-primary mx-2 my-3' onClick={handleUpClick}> Convert to UpperCase</button>
-<button className='btn btn-primary mx-2 my-3' onClick={handleLoClick}> Convert to UpperCase</button>
+<button className='btn btn-primary mx-2 my-3' onClick={handleLoClick}> Convert to LowerCase</button>
+<button className='btn btn-primary mx-2 my-3' onClick={handleReverseClick}> Reverse</button>
 
 
     </div>
