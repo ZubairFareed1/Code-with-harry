@@ -31,7 +31,7 @@ export default function TextForm(props) {
     <>    <div className='container'>
         
   <div className="mb-3">
-    <h1 className='my-3 '>{props.heading} </h1>
+    <h1 className={`my-3`} style={props.mode==='dark'?{color:'white'}:{color:'black'}} >{props.heading} </h1>
    <textarea className="form-control" placeholder='Enter paragraph to convert...' value={text}  onChange={handleOnChange} id="myBox" rows="8"></textarea>
 </div>
 <button className='btn btn-primary mx-2 my-3' onClick={handleUpClick}> Convert to UpperCase</button>
@@ -43,11 +43,11 @@ export default function TextForm(props) {
 
     </div>
     <div className="container">
-        <h2 className='my-3'>Your Text Summary</h2>
-        <p>Total words :<b> {text.split(" ").length-1} </b>,Total Characters : <b>{text.length}</b></p>
-        <p><b>{text===""?0: (0.008 * text.split(" ").length)} </b>- Reading Minutes</p>
-        <h2>Preview</h2>
-        <p>{text}</p>
+        <h2 className='my-3' style={props.mode==='dark'?{color:'white'}:{color:'black'}}>Your Text Summary</h2>
+        <p style={props.mode==='dark'?{color:'white'}:{color:'black'}}>Total words :<b> {text.split(" ").length-1} </b>,Total Characters : <b>{text.length}</b></p>
+        <p style={props.mode==='dark'?{color:'white'}:{color:'black'}}><b>{text===""?0: (0.008 * text.split(" ").length)} </b>- Reading Minutes</p>
+        <h2 style={props.mode==='dark'?{color:'white'}:{color:'black'}}>Preview</h2>
+        <p style={props.mode==='dark'?{color:'white'}:{color:'black'}}>{text}</p>
     </div>
 
     </>
