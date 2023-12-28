@@ -21,17 +21,24 @@ export default function TextForm(props) {
 
 
     }
+    const handleCopy =()=>{
+      var text = document.getElementById("myBox");
+      text.select();
+      navigator.clipboard.writeText(text.value);
+    }
     const [text,setText]=useState("");
   return (
     <>    <div className='container'>
         
   <div className="mb-3">
     <h1 className='my-3 '>{props.heading} </h1>
-   <textarea className="form-control" placeholder='Enter paragraph to convert...' value={text}  onChange={handleOnChange} id="exampleFormControlTextarea1" rows="8"></textarea>
+   <textarea className="form-control" placeholder='Enter paragraph to convert...' value={text}  onChange={handleOnChange} id="myBox" rows="8"></textarea>
 </div>
 <button className='btn btn-primary mx-2 my-3' onClick={handleUpClick}> Convert to UpperCase</button>
 <button className='btn btn-primary mx-2 my-3' onClick={handleLoClick}> Convert to LowerCase</button>
-<button className='btn btn-primary mx-2 my-3' onClick={handleReverseClick}> Reverse</button>
+<button className='btn btn-primary mx-2 my-3' onClick={handleReverseClick}> Reverse Text</button>
+<button className='btn btn-primary mx-2 my-3' onClick={handleCopy}> Copy Text</button>
+
 
 
     </div>
