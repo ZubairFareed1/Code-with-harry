@@ -6,14 +6,17 @@ export default function TextForm(props) {
         // console.log("handle up button clicked..");
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("Text Converted to UpperCase ! ","success")
     }
     const handleLoClick = () =>{
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlert("Text Converted to LowerCase! ","success")
     }
     const handleReverseClick = () =>{
         let newText = text.split("").reverse().join("");
         setText(newText)
+        props.showAlert("Text Converted to Reverse! ","success")
     }
     const handleOnChange = (event) =>{
         // console.log("handle on changed");
@@ -25,6 +28,7 @@ export default function TextForm(props) {
       var text = document.getElementById("myBox");
       text.select();
       navigator.clipboard.writeText(text.value);
+      props.showAlert("Text is Copied in Clipboard! ","success")
     }
     const [text,setText]=useState("");
   return (

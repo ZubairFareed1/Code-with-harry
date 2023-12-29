@@ -8,7 +8,7 @@ export default function Navbar(props) {
     >
       <div className="container">
         <a className="navbar-brand" href="/">
-          {props.logo}
+          Portfolio
         </a>
         <button
           className="navbar-toggler"
@@ -25,7 +25,7 @@ export default function Navbar(props) {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="/">
-                {props.home}
+                Home
               </a>
             </li>
             <li className="nav-item">
